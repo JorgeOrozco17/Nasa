@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import songs
 from routers import graph
 
 app = FastAPI(title="FastAPI Template Chavos")
@@ -13,7 +12,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(graph.router, prefix="/api")
-app.include_router(songs.router)
+
 
 # if __name__ == "__main__":
 #     import uvicorn
